@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --card-rotate: 0deg;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-golden-gradient antialiased text-gray-800 overflow-x-hidden;
+}
+
+.glass {
+  @apply bg-glass backdrop-blur-xl shadow-glow shadow-gold-500/20 border border-white/20;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.shine {
+  position: relative;
+}
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(120deg, rgba(255,255,255,0.7), rgba(245,200,106,0.35), rgba(255,255,255,0.7));
+  filter: blur(18px);
+  z-index: -1;
+  opacity: 0.45;
+}
+
+/* Premium golden gradient frame */
+.gold-border {
+  position: relative;
+}
+.gold-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(from 200deg, #fff7e6, #ffd89b, #f5c86a, #ffd9a8, #fff7e6);
+  border-radius: 1.5rem; /* match rounded-3xl */
+  padding: 2px;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  filter: drop-shadow(0 8px 24px rgba(245,200,106,0.35)) drop-shadow(0 0 30px rgba(255,217,168,0.3));
+}
+
+/* Rose→gold gradient text utility */
+.text-gradient-rose-gold {
+  background: linear-gradient(90deg, #fb7185, #f472b6 35%, #fbbf24 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Safe-area helpers for mobile */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Responsive heading tweaks */
+.h1-balance {
+  line-height: 1.1;
+}
+
+
