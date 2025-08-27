@@ -4,11 +4,14 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "typecheck": "tsc -b --pretty"
+  "dev": "vite",
+  "build": "tsc -b && vite build",
+  "preview": "vite preview",
+  "typecheck": "tsc -b --pretty",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
   },
+  
   "dependencies": {
     "@formspree/react": "^3.0.0",
     "@react-three/drei": "^9.109.5",
